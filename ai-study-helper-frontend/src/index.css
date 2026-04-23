@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  html, body {
+    @apply h-full;
+  }
+
+  #root {
+    @apply h-full;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-black border border-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors duration-200;
+  }
+
+  .textarea-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Voice player custom styles */
+.voice-controls {
+  @apply flex items-center gap-2 bg-gray-50 rounded-lg p-2;
+}
+
+.voice-progress {
+  @apply flex-1 h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.voice-progress-bar {
+  @apply h-full bg-black transition-all duration-300;
+}
+
+/* YouTube player custom styles */
+.youtube-embed {
+  @apply aspect-video w-full rounded-lg overflow-hidden;
+}
+
+/* Mind map styling */
+.mind-map {
+  @apply font-mono text-sm leading-relaxed whitespace-pre-line;
+}
+
+.mind-map-node {
+  @apply pl-4 border-l border-gray-200;
+}
+
+/* Chat message styling */
+.chat-message {
+  @apply max-w-3xl;
+}
+
+.chat-user {
+  @apply ml-auto bg-black text-white;
+}
+
+.chat-bot {
+  @apply mr-auto bg-gray-100 text-black;
+}
+
+/* Quiz styling */
+.quiz-option {
+  @apply p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors duration-200;
+}
+
+.quiz-option.selected {
+  @apply bg-black text-white border-black;
+}
+
+.quiz-option.correct {
+  @apply bg-green-100 border-green-500 text-green-800;
+}
+
+.quiz-option.incorrect {
+  @apply bg-red-100 border-red-500 text-red-800;
+}
+
+/* Flashcard styling */
+.flashcard {
+  @apply relative w-full h-48;
+  perspective: 1000px;
+}
+
+.flashcard-inner {
+  @apply relative w-full h-full transition-transform duration-500;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  @apply absolute inset-0 w-full h-full flex items-center justify-center p-4 rounded-lg border border-gray-200;
+  backface-visibility: hidden;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}

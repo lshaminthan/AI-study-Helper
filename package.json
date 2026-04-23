@@ -1,0 +1,15 @@
+{
+  "name": "ai-study-helper",
+  "private": true,
+  "workspaces": [
+    "ai-study-helper-backend",
+    "ai-study-helper-frontend"
+  ],
+  "scripts": {
+    "install-all": "npm install --workspaces",
+    "dev": "concurrently \"npm run dev --workspace ai-study-helper-backend\" \"npm run dev --workspace ai-study-helper-frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
